@@ -12,7 +12,7 @@ angular.module('serviceQuizApp')
     this.name = 'Bricks A Bunch';
 
     //let vm = this;
-
+    let vm = this;
     this.data = brickWarehouse.getData();
     this.redBricks = this.data.redBricks;
     this.blueBricks = this.data.blueBricks;
@@ -34,4 +34,14 @@ angular.module('serviceQuizApp')
       }
     };
     */
+
+    //this.buy = function(color,size) {
+    this.buy = function(size) {
+      //console.log(color);
+    	//item.quantity = ((item.quantity * 10) +1) /10;
+      vm.data['redBricks'][size].quantity -=1;
+      //item.quantity -=1;
+    }
+
+
   }]);

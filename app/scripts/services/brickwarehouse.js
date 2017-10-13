@@ -24,6 +24,46 @@ angular.module('serviceQuizApp')
     };
     */
 
+    this.data = {
+      redBricks : {
+        '1x1': {
+          quantity: 29,
+          price: 0.01
+        },
+        '2x2': {
+          quantity: 48,
+          price: 0.03
+        },
+        '2x6': {
+          quantity: 27,
+          price: 0.05
+        }
+      },
+      blueBricks : {
+        '2x2': {
+          quantity: 7,
+          price: 0.02
+        },
+        '2x4': {
+          quantity: 2,
+          price: 0.04
+        }
+      },
+      greenBricks : {
+        '2x4': {
+          quantity: 13,
+          price: 0.04
+        },
+        '2x8': {
+          quantity: 41,
+          price: 0.08
+        }
+      }
+
+
+
+    }
+
 
 
     this.getData = function() {
@@ -65,45 +105,6 @@ angular.module('serviceQuizApp')
       };
       */
 
-      this.data = {
-        redBricks : {
-          '1x1': {
-            quantity: 29,
-            price: 0.01
-          },
-          '2x2': {
-            quantity: 48,
-            price: 0.03
-          },
-          '2x6': {
-            quantity: 27,
-            price: 0.05
-          }
-        },
-        blueBricks : {
-          '2x2': {
-            quantity: 7,
-            price: 0.02
-          },
-          '2x4': {
-            quantity: 2,
-            price: 0.04
-          }
-        },
-        greenBricks : {
-          '2x4': {
-            quantity: 13,
-            price: 0.04
-          },
-          '2x8': {
-            quantity: 41,
-            price: 0.08
-          }
-        }
-
-
-
-      }
       /*
       this.data.redBricks = this.redBricks;
       this.data.blueBricks = this.blueBricks;
@@ -112,9 +113,16 @@ angular.module('serviceQuizApp')
       return this.data;
       */
       return this.data;
+
+
+
+
     };
 
+    this.buy = function(color,size) {
 
+      this.data[color][size].quantity -=1;
+    }
 
 
   });
